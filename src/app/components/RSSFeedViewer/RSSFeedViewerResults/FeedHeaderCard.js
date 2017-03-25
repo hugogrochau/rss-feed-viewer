@@ -16,7 +16,7 @@ class FeedHeaderCard extends React.PureComponent {
 
     const cardContainerStyle = { display: 'flex', flexDirection: 'row', justifyContent: 'space-between' };
 
-    const imageStyle = { height: '300px', maxWidth: '50%' };
+    const imageStyle = { height: '300px' };
 
     return (
       <Card>

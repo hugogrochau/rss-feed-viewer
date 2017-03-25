@@ -16,7 +16,13 @@ class FeedItemCard extends React.PureComponent {
     if (!isURL(image)) {
       image = `http://${linkUrl.hostname}/favicon.ico`;
     }
-    const SubtitleLink = <a href={link}>{link}</a>;
+    const Subtitle =
+      (<div>
+        <div>
+          <span>{pubDate}</span>
+        </div>
+        <a href={link}>{link}</a>;
+      </div>);
 
     return (
       <Card
@@ -25,7 +31,7 @@ class FeedItemCard extends React.PureComponent {
         <CardHeader
           avatar={image}
           title={title}
-          subtitle={SubtitleLink}
+          subtitle={Subtitle}
           showExpandableButton
           actAsExpander
         />
