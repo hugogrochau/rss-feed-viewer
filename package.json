@@ -1,0 +1,22 @@
+{
+  "name": "moc",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugogrochau/moc.git"
+  },
+  "author": "hugogrochau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hugogrochau/moc/issues"
+  },
+  "homepage": "https://github.com/hugogrochau/moc#readme",
+  "dependencies": {
+    "webpack": "^2.3.2"
+  }
+}
