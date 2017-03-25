@@ -1,6 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import RSSBar from './RSSBar';
+import RSSInputBar from './RSSInputBar';
 import { fetchRSSJSON } from '../../remoteCalls';
 
 /**
@@ -27,14 +27,14 @@ export class RSSFeedViewer extends React.Component {
     this.setState({ loading: true });
     fetchRSSJSON(this.state.rssUrl)
       .then((feedData) => {
-        this.setState({ feedData, loading: false });
+        this.setState({ feedData, loading: false, error: false });
       })
       .catch((error) => {
         this.setState({ error, loading: false });
       });
   }
 
-  onRSSBarChange(_, rssUrl) {
+  onRSSInputBarChange(_, rssUrl) {
     this.setState({ rssUrl });
   }
 
@@ -42,7 +42,10 @@ export class RSSFeedViewer extends React.Component {
     const buttonLabel = this.state.loading ? 'Loading...' : 'Submit';
     return (
       <div>
-        <RSSBar onChange={this.onRSSBarChange.bind(this)}/>
+        <RSSInputBar
+          onChange={this.onRSSInputBarChange.bind(this)}
+          errorText={this.state.error || ''}
+         />
         <RaisedButton
           label={buttonLabel}
           fullWidth
