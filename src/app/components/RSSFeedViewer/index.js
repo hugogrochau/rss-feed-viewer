@@ -1,9 +1,10 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import isURL from 'validator/lib/isURL';
 import RSSInputBar from './RSSInputBar';
 import RSSFeedViewerResults from './RSSFeedViewerResults';
-import { fetchRSSJSON } from '../../remoteCalls';
-import rssUrls from '../../rssUrls.json';
+import { fetchRSSJSON } from '../../util/remoteCalls';
+import rssUrls from '../../data/rssUrls.json';
 
 /**
  * Component that displays the RSS url input and submit button.
@@ -37,7 +38,11 @@ export class RSSFeedViewer extends React.Component {
   }
 
   onRSSInputBarChange(_, rssUrl) {
-    this.setState({ rssUrl });
+    if (isURL(rssUrl)) {
+      this.setState({ rssUrl, error: false });
+    } else {
+      this.setState({ error: 'URL is invalid' });
+    }
   }
 
   render() {
