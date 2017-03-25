@@ -13,7 +13,7 @@ class FeedItemCard extends React.PureComponent {
     const { title, link, description, pubDate, initiallyExpanded } = this.props;
     const linkUrl = new URL(link);
     let image = this.props.image || this.props.thumbnail;
-    if (!isURL(image)) {
+    if (!image || !isURL(image)) {
       image = `http://${linkUrl.hostname}/favicon.ico`;
     }
     const Subtitle =

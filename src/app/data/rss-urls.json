@@ -1,5 +1,7 @@
 [
   "https://news.ycombinator.com/rss",
   "https://www.theguardian.com/international/rss",
-  "http://feeds.twit.tv/brickhouse.xml"
+  "http://feeds.twit.tv/brickhouse.xml",
+  "https://www.forbes.com/most-popular/feed/",
+  "http://www.wsj.com/xml/rss/3_7085.xml"
 ]
