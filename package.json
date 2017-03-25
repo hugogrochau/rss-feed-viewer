@@ -5,6 +5,7 @@
   "main": "src/app/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "live-server public",
     "build": "webpack -d",
     "watch": "webpack -d --watch",
     "lint": "eslint src"
@@ -32,6 +33,7 @@
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.10.3",
+    "live-server": "^1.2.0",
     "webpack": "^2.3.2"
   }
 }
