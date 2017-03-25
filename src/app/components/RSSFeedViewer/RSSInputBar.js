@@ -9,12 +9,14 @@ import TextField from 'material-ui/TextField';
  */
 class RSSInputBar extends React.PureComponent {
   render() {
+    const { onChange, errorText, defaultValue } = this.props;
     return (
       <TextField
-        hintText="http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+        id="rss-input-bar"
+        defaultValue={defaultValue}
         fullWidth
-        onChange={this.props.onChange}
-        errorText={this.props.errorText}
+        onChange={onChange}
+        errorText={errorText}
       />
     );
   }
@@ -23,6 +25,7 @@ class RSSInputBar extends React.PureComponent {
 RSSInputBar.propTypes = {
   onChange: React.PropTypes.func,
   errorText: React.PropTypes.string,
+  defaultValue: React.PropTypes.string,
 };
 
 export default RSSInputBar;

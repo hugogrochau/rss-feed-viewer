@@ -16,6 +16,10 @@ var config = {
         test: /\.js?/,
         include: APP_DIR,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.json$/,
+        use: 'json-loader'
       }
     ]
   },
