@@ -3,8 +3,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import isURL from 'validator/lib/isURL';
 import RSSInputBar from './RSSInputBar';
 import RSSFeedViewerResults from './RSSFeedViewerResults';
-import { fetchRSSJSON } from '../../util/remoteCalls';
-import rssUrls from '../../data/rssUrls.json';
+import { fetchRSSJSON } from '../../util/remote-calls';
+import rssUrls from '../../data/rss-urls.json';
 
 /**
  * Component that displays the RSS url input and submit button.
