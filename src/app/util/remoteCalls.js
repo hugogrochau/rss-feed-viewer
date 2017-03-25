@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 /**
  * Fetches a JSON representation of a RSS feed using the rss2json api
  * @export
- * @param {any} rssUrl
+ * @param {string} rssUrl
  * @returns {Promise}
  */
 export function fetchRSSJSON(rssUrl) {
