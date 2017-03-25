@@ -10,16 +10,14 @@ import FeedItemCard from './FeedItemCard';
  */
 class RSSFeedViewerResults extends React.PureComponent {
   render() {
-    const feedItems = this.props.feedData.items.map((item) =>
-        <FeedItemCard { ...item } key={ item.title }/>
+    const feedItems = this.props.feedData.items.map((item, i) =>
+        <FeedItemCard { ...item } key={ item.title } initiallyExpanded={ i === 0 }/>
     );
 
     return (
       <div>
         <FeedHeaderCard { ...this.props.feedData.feed } />
-        <GridList>
-          { feedItems }
-        </GridList>
+        { feedItems }
       </div>
     );
   }

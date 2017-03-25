@@ -26,6 +26,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-tap-event-plugin": "^2.0.1",
+    "sanitize-html": "^1.14.1",
     "validator": "^7.0.0"
   },
   "devDependencies": {
