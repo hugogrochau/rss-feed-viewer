@@ -1,6 +1,7 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import RSSBar from './RSSBar';
+import { fetchRSSJSON } from '../remoteCalls';
 
 /**
  * Component that displays the RSS url input and submit button.
@@ -18,19 +19,30 @@ export class RSSFeedViewer extends React.Component {
     this.state = {
       error: false,
       loading: false,
+      rssUrl: '',
+      feedData: {},
     };
   }
   onSubmit() {
-    this.setState({
-      loading: true,
-    });
+    this.setState({ loading: true });
+    fetchRSSJSON(this.state.rssUrl)
+      .then((feedData) => {
+        this.setState({ feedData, loading: false });
+      })
+      .catch((error) => {
+        this.setState({ error, loading: false });
+      });
+  }
+
+  onRSSBarChange(_, rssUrl) {
+    this.setState({ rssUrl });
   }
 
   render() {
     const buttonLabel = this.state.loading ? 'Loading...' : 'Submit';
     return (
       <div>
-        <RSSBar/>
+        <RSSBar onChange={this.onRSSBarChange.bind(this)}/>
         <RaisedButton
           label={buttonLabel}
           fullWidth
