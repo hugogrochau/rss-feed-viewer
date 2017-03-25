@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardText, CardContent } from 'material-ui/Card';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 
 /**
  * Displays a RSS feed's source information
@@ -14,14 +14,21 @@ class FeedHeaderCard extends React.PureComponent {
 
     const SubtitleLink = <a href={link}>{link}</a>;
 
-    const cardContainerStyle = { display: 'flex', flexDirection: 'row', justifyContent: 'space-between' };
+    const cardContainerStyle = {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      flexWrap: 'wrap',
+    };
 
-    const imageStyle = { height: '300px' };
+    const cardInfoStyle = { width: '500px' };
+
+    const cardImageStyle = { maxWidth: '500px' };
 
     return (
       <Card>
         <div style={cardContainerStyle}>
-          <div>
+          <div style={cardInfoStyle}>
             <CardTitle
               title={title}
               subtitle={SubtitleLink}
@@ -30,7 +37,9 @@ class FeedHeaderCard extends React.PureComponent {
               {description}
             </CardText>
           </div>
-          <img style={imageStyle} src={image} />
+          <div>
+            <img src={image} style={cardImageStyle} />
+          </div>
         </div>
       </Card>
     );
