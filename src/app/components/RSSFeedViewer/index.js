@@ -1,7 +1,7 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import RSSBar from './RSSBar';
-import { fetchRSSJSON } from '../remoteCalls';
+import { fetchRSSJSON } from '../../remoteCalls';
 
 /**
  * Component that displays the RSS url input and submit button.
