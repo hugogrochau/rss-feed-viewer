@@ -23,7 +23,7 @@ A simple react.js application for viewing a rss feed
 * `live-server` - For live reloading during development 
 * `eslint` - To have a consistent code style
 * `validator` - For validating URLs on the client side. Felt like it would be better and safer to use a 7k+ github stars package instead of implementing it myself 
-* `sanitize-html` - For preventing XSS vulnerabilities
+* `sanitize-html` - For preventing XSS vulnerabilities. Also felt like it would be safer to use an established library
 
 ## Author
 @hugogrochau
