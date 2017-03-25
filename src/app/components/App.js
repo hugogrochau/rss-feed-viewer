@@ -6,15 +6,22 @@ import RSSFeedViewer from './RSSFeedViewer';
 
 injectTapEventPlugin();
 
-const App = () =>
-  <MuiThemeProvider>
-    <div id="container">
-      <AppBar
-        title="RSS Feed Viewer"
-        iconElementLeft={<span />}
-      />
-      <RSSFeedViewer />
-    </div>
-  </MuiThemeProvider>;
-
-export default App;
+/**
+ * Main component that adds the Material-UI theme and contains
+ * the main AppBar and RSSFeedViewer components
+ * @export
+ * @class App
+ * @extends {React.PureComponent}
+ */
+export default class App extends React.PureComponent {
+  render() {
+    return (
+      <MuiThemeProvider>
+        <div id="container">
+          <AppBar title="RSS Feed Viewer" iconElementLeft={< span />}/>
+          <RSSFeedViewer/>
+        </div>
+      </MuiThemeProvider>
+    );
+  }
+}
