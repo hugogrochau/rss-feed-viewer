@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, CardHeader, CardText } from 'material-ui/Card';
 
 /**
  * Displays a RSS feed's source information
@@ -7,20 +8,23 @@ import React from 'react';
  */
 class FeedHeaderCard extends React.PureComponent {
   render() {
-    const { title, link, author, description } = this.props;
+    const { link, title, description } = this.props;
     const linkUrl = new URL(link);
-    const image = this.props.image || `${linkUrl.hostname}/favicon.ico`;
+    const image = `http://${linkUrl.hostname}/favicon.ico`;
+
+    const SubtitleLink = <a href={link}>{link}</a>;
 
     return (
-      <div>
-        <ul>
-          <li>{title}</li>
-          <li>{link}</li>
-          <li>{author}</li>
-          <li>{description}</li>
-          <li>{image}</li>
-        </ul>
-      </div>
+      <Card>
+        <CardHeader
+          avatar={image}
+          title={title}
+          subtitle={SubtitleLink}
+        />
+        <CardText>
+          {description}
+        </CardText>
+      </Card>
     );
   }
 }
@@ -28,9 +32,7 @@ class FeedHeaderCard extends React.PureComponent {
 FeedHeaderCard.propTypes = {
   title: React.PropTypes.string.isRequired,
   link: React.PropTypes.string.isRequired,
-  author: React.PropTypes.string,
   description: React.PropTypes.string,
-  image: React.PropTypes.string,
 };
 
 export default FeedHeaderCard;
