@@ -10,7 +10,7 @@ import isURL from 'validator/lib/isURL';
  */
 class FeedItemCard extends React.PureComponent {
   render() {
-    const { title, link, description, author, pubDate, categories, initiallyExpanded } = this.props;
+    const { title, link, description, pubDate, initiallyExpanded } = this.props;
     const linkUrl = new URL(link);
     let image = this.props.image || this.props.thumbnail;
     if (!isURL(image)) {
@@ -44,8 +44,6 @@ class FeedItemCard extends React.PureComponent {
 }
 
 FeedItemCard.propTypes = {
-  author: React.PropTypes.string,
-  categories: React.PropTypes.array,
   description: React.PropTypes.string.isRequired,
   image: React.PropTypes.string,
   initiallyExpanded: React.PropTypes.bool,
