@@ -7,8 +7,7 @@ import fetch from 'isomorphic-fetch';
  * @returns {Promise}
  */
 export function fetchRSSJSON(rssUrl) {
-  // const url = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-  const url = `http://localhost:3000/?rss_url=${encodeURIComponent(rssUrl)}`;
+  const url = `${process.env.API_URL}?rss_url=${encodeURIComponent(rssUrl)}`;
   return fetch(url).then((res) => res.json()).then((res) => {
     if (res.feed && res.items) {
       return { feed: res.feed, items: res.items };
